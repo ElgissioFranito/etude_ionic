@@ -7,12 +7,18 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
   isOpen: boolean = false;
+  tache: any[] = [{
+    isCheck : false,
+      nom : "faire la vaisselle",
+  }];
+
   tache: any[] = [
     {
       isCheck : false,
       nom : "faire la vaisselle",
     }
   ];
+
   newTache: string = "";
 
   constructor() {}
@@ -23,6 +29,11 @@ export class HomePage {
   }
 
   onCheck(e: any, i: number){
+
+    // this.tache[i].isCheck = e.detail.checked;
+    console.log(e.detail.checked);
+
+    this.tache[i].isCheck = !this.tache[i].isCheck;
     // this.tache[i].isCheck = e.detail.checked;
     console.log(e.detail.checked);
 

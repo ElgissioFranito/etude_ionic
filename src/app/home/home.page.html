@@ -27,11 +27,11 @@
     <!-- une carte a l'interieur de la list -->
     <ion-card class="un-tache" *ngFor="let t of tache, let i = index" >
       <!-- un checkbox de capacitor -->
-      <ion-checkbox [checked]="t.isCheck" (change)="onCheck($event, i)"></ion-checkbox>
+      <ion-checkbox [checked]="t.isCheck" (click)="onCheck($event, i)"></ion-checkbox>
 
       <!-- un titre classic de HTML -->
-      <h4 class="nomTache" *ngIf="!t.isCheck">{{ t.nom}}</h4>
-      <h4 class="nomTache"*ngIf="t.isCheck" style="background: red; text-decoration: line-through;">{{ t.nom}}</h4>
+      <h4 class="nomTache" *ngIf="t.isCheck==false">{{ t.nom}}</h4>
+      <h4 class="nomTache" *ngIf="t.isCheck==true" style="background: red; text-decoration: line-through;">{{ t.nom}}</h4>
 
       <!-- un bouton capacitor
         => expand=block : display block
